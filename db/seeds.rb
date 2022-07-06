@@ -1,0 +1,8 @@
+Role.create(character_name: 'king')
+Role.create(character_name: 'brother')
+Role.create(character_name: 'queen')
+Role.create(character_name: 'friend')
+Audition.create(actor:'hunter', location:'SD', phone:760, hired:0, role_id:1)
+Audition.create(actor:'jasper', location:'SD', phone:760, hired:0, role_id:2)
+Audition.create(actor:'abby', location:'SD', phone:760, hired:0, role_id:3)
+Audition.create(actor:'nick', location:'SD', phone:760, hired:0, role_id:4)
