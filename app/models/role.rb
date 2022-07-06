@@ -4,16 +4,16 @@ class Role < ActiveRecord::Base
         Audition.where(role_id:self.id)
     end
     def actors
-        auditions.map{|audition| audition.actor}
+        auditions.pluck(:actor)
     end
     def locations
-        Set.new(auditions.map{|audition| audition.location}).to_a
+        auditions.pluck(:location)
     end
     def lead
-        Audition.find_by(role_id: self.id, hired: true )
+        auditions.find_by(hired: true )
     end
     def understudy
-        Audition.where(role_id: self.id, hired: true).second
+        auditions.where(hired: true).second
 
     end
 end
